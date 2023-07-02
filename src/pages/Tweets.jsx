@@ -1,11 +1,9 @@
-// import React from "react";
-import { Card } from "../components/Card/Card";
+import { TweetsList } from "../components/TweetsList/TweetsList";
 
 export const Tweets = () => {
   return (
     <>
-      <div>Tweets</div>
-      <Card />
+      <TweetsList />
     </>
   );
 };
