@@ -1,0 +1,6 @@
+.tweetsList {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}

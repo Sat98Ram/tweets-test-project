@@ -1,0 +1,10 @@
+.btnLink {
+  padding: 14px 28px;
+  background-color: rgba(235, 216, 255, 1);
+  text-align: center;
+  max-width: 100px;
+  margin-top: 24px;
+  border-radius: 10px;
+  box-shadow: 0px 3.4369285106658936px 3.4369285106658936px 0px
+    rgba(0, 0, 0, 0.25);
+}

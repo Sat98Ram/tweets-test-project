@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUsers } from "./operations";
+import { followUser, getUsers } from "./operations";
 
 const initialState = {
   users: {
@@ -22,6 +22,14 @@ const handleRejected = (state) => {
   state.users.isLoading = false;
 };
 
+const handleUpdateFollowers = (state, { payload }) => {
+  const { userId, followers } = payload;
+  const user = state.users.items.find((item) => item.id === userId);
+  if (user) {
+    user.followers = followers;
+  }
+};
+
 const usersSlice = createSlice({
   name: "users",
   initialState,
@@ -29,7 +37,8 @@ const usersSlice = createSlice({
     builder
       .addCase(getUsers.pending, handlePending)
       .addCase(getUsers.fulfilled, handleUsers)
-      .addCase(getUsers.rejected, handleRejected);
+      .addCase(getUsers.rejected, handleRejected)
+      .addCase(followUser.fulfilled, handleUpdateFollowers);
   },
 });
 

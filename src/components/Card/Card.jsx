@@ -1,34 +1,52 @@
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import { IconGoIT } from "../Icons/IconGoIT";
 import css from "./Card.module.css";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { followUser } from "../../redux/operations";
+import { selectFollowersCountById } from "../../redux/selector";
+import bgImage from "../../images/bg2x.png";
+import { UserInfo } from "../UserInfo/UserInfo";
 
-export const Card = () =>
-  // { id, name, tweets, followers }
-  {
-    return (
-      <li
-        //   key={id}
-        className={css.card}
-      >
-        <IconGoIT className={css.logo} />
-        <img src="../../image/picture2.png" />
-        {/* <div className={css.topPart} /> */}
-        <div className={css.line} />
-        {/* <p>{name}</p>
-      <p>{tweets} TWEETS</p>
-      <p>{followers} FOLLOWERS</p> */}
-      </li>
-      // <li key={id} className={css.card}>
-      //   <p>{name}</p>
-      //   <p>{tweets} TWEETS</p>
-      //   <p>{followers} FOLLOWERS</p>
-      // </li>
-    );
+export const Card = ({ id, name, tweets, followers }) => {
+  const [isFollow, setIsFollow] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleFollow = () => {
+    const updatedFollowers = isFollow ? followers - 1 : followers + 1;
+    setIsFollow(!isFollow);
+    dispatch(followUser({ userId: id, followers: updatedFollowers }));
   };
 
-// Card.propTypes = {
-//   id: PropTypes.string.isRequired,
-//   name: PropTypes.string.isRequired,
-//   tweets: PropTypes.number.isRequired,
-//   followers: PropTypes.number.isRequired,
-// };
+  const updatedFollowers = useSelector((state) =>
+    selectFollowersCountById(state, id)
+  );
+
+  return (
+    <li key={id} className={css.card}>
+      <IconGoIT className={css.logo} />
+      <img src={bgImage} className={css.bgImage} />
+      <div className={css.line} />
+      <UserInfo
+        name={name}
+        tweets={tweets}
+        followers={updatedFollowers}
+        className={css.cardText}
+      />
+      {/* <p className={css.cardText}>{name}</p>
+      <p className={css.cardText}>{tweets} TWEETS</p>
+      <p className={css.cardText}>{updatedFollowers} FOLLOWERS</p> */}
+
+      <button type="button" className={css.btnFollow} onClick={handleFollow}>
+        {isFollow ? <span>Following</span> : <span>Follow</span>}
+      </button>
+    </li>
+  );
+};
+
+Card.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  tweets: PropTypes.number,
+  followers: PropTypes.number,
+};

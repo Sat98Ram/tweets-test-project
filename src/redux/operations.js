@@ -8,7 +8,20 @@ export const getUsers = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await axios.get("/users");
-      console.log(data);
+      return data;
+    } catch (err) {
+      return rejectWithValue(err.message);
+    }
+  }
+);
+
+export const followUser = createAsyncThunk(
+  "users/follow",
+  async ({ userId, followers }, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.put(`/users/${userId}/`, {
+        followers,
+      });
       return data;
     } catch (err) {
       return rejectWithValue(err.message);

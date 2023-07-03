@@ -1,7 +1,7 @@
 .card {
   width: 308px;
   height: 396px;
-
+  text-align: center;
   border-radius: 20px;
   background: linear-gradient(142deg, #471ca9 0%, #5736a3 69.1%, #4b2a99 100%);
   box-shadow: -2.5776965618133545px 6.873857021331787px 20.621572494506836px 0px
@@ -18,10 +18,6 @@
   left: 20px;
 }
 
-.topPart {
-  /* background-image: url(../image/picture.png); */
-}
-
 .line {
   position: absolute;
   right: 0;
@@ -33,3 +29,30 @@
   width: 380px;
   height: 8px;
 }
+
+.bgImage {
+  width: 308px;
+  height: 168px;
+  margin-bottom: 64px;
+}
+
+.btnFollow {
+  padding: 14px 28px;
+  width: 196px;
+  border-radius: 10px;
+  background: #ebd8ff;
+  box-shadow: 0px 3.4369285106658936px 3.4369285106658936px 0px
+    rgba(0, 0, 0, 0.25);
+  margin-top: 16px;
+}
+
+.cardText {
+  color: #ebd8ff;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: calc(24 / 20);
+}
+/* 
+.cardText:not(:last-child) {
+  margin-bottom: 8px;
+} */
