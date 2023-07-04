@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "../redux/operations";
 import { selectIsLoading, selectUsers } from "../redux/selector";
 import { BtnReturn } from "../components/BtnReturn/BtnReturn";
-import { Container } from "../components/Container/Container";
 import { Section } from "../components/Section/Section";
 import { BtnLink } from "../components/BtnLink/BtnLink";
 
@@ -34,21 +33,17 @@ export const Tweets = () => {
   };
 
   const handleReturn = () => {
-    setPage((prevState) => prevState - 1);
-    const prevPage = setPage((prevState) => prevState - 1);
+    const prevPage = page - 1;
+    setPage(prevPage);
     dispatch(getUsers(prevPage));
   };
 
   return (
     <>
       <BtnLink text="Back" endpoint="/" />
-      {isLoading && (
-        <Container>
-          <p style={{ marginTop: 24 }}>Loading. Please wait</p>
-        </Container>
-      )}
 
       <Section>
+        {isLoading && <p style={{ marginTop: 24 }}>Loading. Please wait</p>}
         <TweetsList page={page} users={users} />
         {isBtn && <BtnLoadMore onClick={handleLoadMore} />}
         {page > 1 && <BtnReturn onClick={handleReturn} />}

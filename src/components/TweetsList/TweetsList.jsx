@@ -20,5 +20,5 @@ export const TweetsList = ({ users }) => {
 };
 
 TweetsList.propTypes = {
-  users: PropTypes.array,
+  users: PropTypes.array.isRequired,
 };
