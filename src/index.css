@@ -33,8 +33,15 @@ button {
   border: 1px solid transparent;
   font-family: inherit;
   cursor: pointer;
+  background: #ebd8ff;
+  box-shadow: 0px 3.4369285106658936px 3.4369285106658936px 0px
+    rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 
+button:hover {
+  box-shadow: 0px 8px 8px 4px rgba(0, 0, 0, 0.25);
+}
 a {
   text-decoration: none;
   display: block;
@@ -45,4 +52,17 @@ ol {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.btnFollow {
+  padding: 14px 28px;
+  width: 196px;
+  margin-top: 16px;
+}
+
+.btnFollowing {
+  padding: 14px 28px;
+  width: 196px;
+  background: #5cd3a8;
+  margin-top: 16px;
 }

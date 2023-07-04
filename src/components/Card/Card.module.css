@@ -36,23 +36,23 @@
   margin-bottom: 64px;
 }
 
-.btnFollow {
-  padding: 14px 28px;
-  width: 196px;
-  border-radius: 10px;
-  background: #ebd8ff;
-  box-shadow: 0px 3.4369285106658936px 3.4369285106658936px 0px
-    rgba(0, 0, 0, 0.25);
-  margin-top: 16px;
-}
-
 .cardText {
   color: #ebd8ff;
   font-weight: 500;
   font-size: 20px;
   line-height: calc(24 / 20);
 }
-/* 
-.cardText:not(:last-child) {
-  margin-bottom: 8px;
-} */
+
+.cardText:not(:first-child) {
+  margin-top: 8px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 8px solid rgba(235, 216, 255, 1);
+  position: absolute;
+  top: 170px;
+  left: 150px;
+}
