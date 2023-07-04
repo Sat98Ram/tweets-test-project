@@ -43,7 +43,7 @@ export const Tweets = () => {
       <BtnLink text="Back" endpoint="/" />
 
       <Section>
-        {isLoading && <p style={{ marginTop: 24 }}>Loading. Please wait</p>}
+        {isLoading && <p>Loading. Please wait</p>}
         <TweetsList page={page} users={users} />
         {isBtn && <BtnLoadMore onClick={handleLoadMore} />}
         {page > 1 && <BtnReturn onClick={handleReturn} />}
