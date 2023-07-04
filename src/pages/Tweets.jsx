@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import { BtnLoadMore } from "../components/BtnLoadMore/BtnLoadMore";
 import { TweetsList } from "../components/TweetsList/TweetsList";
-import { BtnLink } from "../components/btnLink/btnLink";
+
 import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "../redux/operations";
 import { selectIsLoading, selectUsers } from "../redux/selector";
 import { BtnReturn } from "../components/BtnReturn/BtnReturn";
 import { Container } from "../components/Container/Container";
 import { Section } from "../components/Section/Section";
+import { BtnLink } from "../components/BtnLink/BtnLink";
 
 export const Tweets = () => {
   const [page, setPage] = useState(1);
   const [isBtn, setIsBtn] = useState(true);
-  const [followers, setFollowers] = useState();
+  // const [followers, setFollowers] = useState();
 
   const isLoading = useSelector(selectIsLoading);
   const users = useSelector(selectUsers);
@@ -43,7 +44,7 @@ export const Tweets = () => {
       <BtnLink text="Back" endpoint="/" />
       {isLoading && (
         <Container>
-          <p>Loading. Please wait</p>
+          <p style={{ marginTop: 24 }}>Loading. Please wait</p>
         </Container>
       )}
 

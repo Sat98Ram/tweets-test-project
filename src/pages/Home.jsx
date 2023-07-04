@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Container } from "../components/Container/Container";
-import { BtnLink } from "../components/btnLink/btnLink";
 import css from "./Home.module.css";
+import { BtnLink } from "../components/BtnLink/BtnLink";
 
 export const Home = () => {
   return (
