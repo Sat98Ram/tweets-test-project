@@ -33,7 +33,7 @@
 .bgImage {
   width: 308px;
   height: 168px;
-  margin-bottom: 64px;
+  margin-bottom: 68px;
 }
 
 .cardText {
@@ -42,6 +42,10 @@
   font-size: 20px;
   line-height: calc(24 / 20);
 }
+/* .cardText:first-child {
+  font-size: 16px;
+  margin-top: 8px;
+} */
 
 .cardText:not(:first-child) {
   margin-top: 8px;

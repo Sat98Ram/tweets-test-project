@@ -1,0 +1,21 @@
+.tweetLink {
+  display: inline;
+  font-weight: 600;
+  margin: 0 6px;
+  color: rgb(87, 54, 163);
+}
+
+.mainTitle {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 64px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #373737;
+}
+
+.projectDescr {
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+}

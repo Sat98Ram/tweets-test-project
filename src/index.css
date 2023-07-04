@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,600&display=swap");
+
 body {
   background-image: linear-gradient(
     45deg,
@@ -13,8 +15,7 @@ body {
     hsl(233deg 95% 80%) 80%,
     hsl(219deg 95% 75%) 100%
   );
-  /* background-color: #9bbaf0; */
-  /* background-color: rgb(221, 190, 250); */
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   min-height: 100vh;
 }
@@ -37,6 +38,9 @@ button {
   box-shadow: 0px 3.4369285106658936px 3.4369285106658936px 0px
     rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #373737;
 }
 
 button:hover {
