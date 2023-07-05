@@ -12,17 +12,11 @@ import { BtnLink } from "../components/BtnLink/BtnLink";
 export const Tweets = () => {
   const [page, setPage] = useState(1);
   const [isBtn, setIsBtn] = useState(true);
-  // const [followers, setFollowers] = useState();
-
   const isLoading = useSelector(selectIsLoading);
   const users = useSelector(selectUsers);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const localStorageUsers = JSON.parse(localStorage.getItem("users"));
-    if (localStorageUsers) {
-      dispatch(getUsers(page));
-    }
     dispatch(getUsers(page));
   }, [dispatch, page]);
 
@@ -30,12 +24,18 @@ export const Tweets = () => {
     const newPage = page + 1;
     setPage(newPage);
     dispatch(getUsers(newPage));
+    if (newPage === 5) {
+      setIsBtn(false);
+    }
   };
 
   const handleReturn = () => {
     const prevPage = page - 1;
     setPage(prevPage);
     dispatch(getUsers(prevPage));
+    if (prevPage === 4) {
+      setIsBtn(true);
+    }
   };
 
   return (
@@ -45,8 +45,8 @@ export const Tweets = () => {
       <Section>
         {isLoading && <p>Loading. Please wait</p>}
         <TweetsList page={page} users={users} />
-        {isBtn && <BtnLoadMore onClick={handleLoadMore} />}
         {page > 1 && <BtnReturn onClick={handleReturn} />}
+        {isBtn && <BtnLoadMore onClick={handleLoadMore} />}
       </Section>
     </>
   );

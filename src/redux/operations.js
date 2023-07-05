@@ -8,7 +8,6 @@ export const getUsers = createAsyncThunk(
   async (page, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(`/users/?page=${page}&limit=3`);
-      localStorage.setItem("users", JSON.stringify(data));
       return data;
     } catch (err) {
       return rejectWithValue(err.message);
@@ -21,7 +20,6 @@ export const followUser = createAsyncThunk(
   async ({ userId, followers }, { rejectWithValue }) => {
     try {
       const { data } = await axios.put(`/users/${userId}`, { followers });
-      localStorage.setItem("users", JSON.stringify(data));
       return data;
     } catch (err) {
       return rejectWithValue(err.message);

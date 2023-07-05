@@ -2,29 +2,28 @@ import PropTypes from "prop-types";
 import { IconGoIT } from "../Icons/IconGoIT";
 import css from "./Card.module.css";
 
-import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { followUser } from "../../redux/operations";
 import bgImage from "../../images/bg2x.png";
 import { UserInfo } from "../UserInfo/UserInfo";
-export const Card = ({ id, name, tweets, followers, avatar }) => {
-  const [isFollow, setIsFollow] = useState(false);
-  const [followersCount, setFollowersCount] = useState(followers);
+import { followUserById, unfollowUserById } from "../../redux/slice";
+import { followUser } from "../../redux/operations";
+import { BtnFollow } from "../BtnFollow/BtnFollow";
+
+export const Card = ({ id, name, tweets, followers, avatar, isFolowing }) => {
   const dispatch = useDispatch();
 
   const handleFollow = () => {
-    const updatedFollowersCount = isFollow
-      ? followersCount - 1
-      : followersCount + 1;
-    setIsFollow(!isFollow);
-    setFollowersCount(updatedFollowersCount);
+    if (isFolowing) {
+      dispatch(unfollowUserById(id));
+    } else {
+      dispatch(followUserById(id));
+    }
+    const updatedFollowersCount = isFolowing ? followers - 1 : followers + 1;
     dispatch(followUser({ userId: id, followers: updatedFollowersCount }));
   };
 
-  const btnClass = isFollow ? "btnFollowing" : "btnFollow";
-
   return (
-    <li key={id} className={css.card}>
+    <li className={css.card}>
       <IconGoIT className={css.logo} />
       <img src={bgImage} className={css.bgImage} />
       <div className={css.line} />
@@ -32,13 +31,15 @@ export const Card = ({ id, name, tweets, followers, avatar }) => {
       <UserInfo
         name={name}
         tweets={tweets}
-        followers={followersCount}
+        followers={followers}
         className={css.cardText}
       />
 
-      <button type="button" className={btnClass} onClick={handleFollow}>
-        {isFollow ? <span>Following</span> : <span>Follow</span>}
-      </button>
+      <BtnFollow
+        className={isFolowing ? `${css.btnFollowing}` : `${css.btnFollow}`}
+        onClick={handleFollow}
+        isFolowing={isFolowing}
+      />
     </li>
   );
 };
@@ -49,4 +50,5 @@ Card.propTypes = {
   tweets: PropTypes.number.isRequired,
   followers: PropTypes.number.isRequired,
   avatar: PropTypes.string.isRequired,
+  isFolowing: PropTypes.bool.isRequired,
 };

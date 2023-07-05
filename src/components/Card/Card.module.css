@@ -42,10 +42,6 @@
   font-size: 20px;
   line-height: calc(24 / 20);
 }
-/* .cardText:first-child {
-  font-size: 16px;
-  margin-top: 8px;
-} */
 
 .cardText:not(:first-child) {
   margin-top: 8px;
@@ -59,4 +55,17 @@
   position: absolute;
   top: 170px;
   left: 150px;
+}
+
+.btnFollow {
+  padding: 14px 28px;
+  width: 196px;
+  margin-top: 16px;
+}
+
+.btnFollowing {
+  padding: 14px 28px;
+  width: 196px;
+  background: #5cd3a8;
+  margin-top: 16px;
 }

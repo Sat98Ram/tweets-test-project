@@ -6,14 +6,7 @@ export const TweetsList = ({ users }) => {
   return (
     <ul className={css.tweetsList}>
       {users.map((user) => (
-        <Card
-          key={user.id}
-          id={user.id}
-          name={user.user}
-          tweets={user.tweets}
-          followers={user.followers}
-          avatar={user.avatar}
-        />
+        <Card key={user.id} {...user} name={user.user} />
       ))}
     </ul>
   );

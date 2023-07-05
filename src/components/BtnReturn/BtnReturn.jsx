@@ -5,7 +5,7 @@ import css from "./BtnReturn.module.css";
 export const BtnReturn = ({ onClick }) => {
   return (
     <button onClick={onClick} className={css.BtnReturn}>
-      Return
+      Prev page
     </button>
   );
 };
