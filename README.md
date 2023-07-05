@@ -2,7 +2,7 @@ It`s a React test project created with vite.
 
 It took 5 days to create this App.
 
-<b>Home Page:<b/>
+Home Page:
 
 - Navigation: You can see two links in the header. So you can easily navigate to another page.
 
