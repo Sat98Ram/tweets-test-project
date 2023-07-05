@@ -52,6 +52,9 @@
   height: 80px;
   border-radius: 50%;
   border: 8px solid rgba(235, 216, 255, 1);
+  box-shadow: 0px 3.4369285106658936px 2.5776965618133545px 0px #fbf8ff inset,
+    0px 3.4369285106658936px 3.4369285106658936px 0px rgba(0, 0, 0, 0.06),
+    0px -1.7184642553329468px 3.4369285106658936px 0px #ae7be3 inset;
   position: absolute;
   top: 170px;
   left: 150px;
