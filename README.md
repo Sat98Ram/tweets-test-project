@@ -1,3 +1,5 @@
+                                                                 TWEETS TEST PROJECT
+
 It`s a React test project created with Vite.
 
 It took 5 days to create this App.
@@ -12,7 +14,7 @@ Home Page:
 
 Features:
 
-- As soon as you are on the Tweets Page you can see cards with brief information about users' profiles.
+- As soon as you are on the Tweets Page you can look into cards with brief information about users' profiles.
 
 - To subscribe to the user's profile all you need is to press the button Follow.
 
