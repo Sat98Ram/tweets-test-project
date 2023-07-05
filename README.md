@@ -1,4 +1,4 @@
-                                                                 TWEETS TEST PROJECT
+                                     TWEETS TEST PROJECT
 
 Introduction:                                                                 
 
@@ -16,7 +16,7 @@ Features:
 
 - As soon as you are on the Tweets Page you can look into cards with brief information about users' profiles.
 
-- Each card has users' name, number of their tweets and followers.
+- Each card has the user's name, the number of their tweets, and followers.
 
 - To subscribe to the user's profile all you need is to press the button Follow.
 
@@ -24,4 +24,4 @@ Features:
 
 
 
-                                                                       START EXPLORING!
+                                    START EXPLORING!
