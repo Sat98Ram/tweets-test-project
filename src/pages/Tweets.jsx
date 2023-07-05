@@ -19,10 +19,10 @@ export const Tweets = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // const localStorageUsers = JSON.parse(localStorage.getItem("users"));
-    // if (localStorageUsers) {
-    //   dispatch(getUsers(page));
-    // }
+    const localStorageUsers = JSON.parse(localStorage.getItem("users"));
+    if (localStorageUsers) {
+      dispatch(getUsers(page));
+    }
     dispatch(getUsers(page));
   }, [dispatch, page]);
 
