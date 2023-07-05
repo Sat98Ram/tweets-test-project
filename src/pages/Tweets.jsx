@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { BtnLoadMore } from "../components/BtnLoadMore/BtnLoadMore";
+import { BtnLoad } from "../components/BtnLoad/BtnLoad";
 import { TweetsList } from "../components/TweetsList/TweetsList";
-
 import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "../redux/operations";
 import { selectIsLoading, selectUsers } from "../redux/selector";
-import { BtnReturn } from "../components/BtnReturn/BtnReturn";
 import { Section } from "../components/Section/Section";
 import { BtnLink } from "../components/BtnLink/BtnLink";
 
@@ -45,8 +43,8 @@ export const Tweets = () => {
       <Section>
         {isLoading && <p>Loading. Please wait</p>}
         <TweetsList page={page} users={users} />
-        {page > 1 && <BtnReturn onClick={handleReturn} />}
-        {isBtn && <BtnLoadMore onClick={handleLoadMore} />}
+        {page > 1 && <BtnLoad onClick={handleReturn} text={`Prev page`} />}
+        {isBtn && <BtnLoad onClick={handleLoadMore} text={`Next page`} />}
       </Section>
     </>
   );
