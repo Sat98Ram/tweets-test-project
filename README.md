@@ -1,8 +1,8 @@
                                                                  TWEETS TEST PROJECT
 
-It`s a React test project created with Vite.
+Introduction:                                                                 
 
-It took 5 days to create this App.
+It`s a React test project created with Vite. It took 5 days to create this App.
 
 Home Page:
 
@@ -10,11 +10,13 @@ Home Page:
 
 - Link in the description of the project on the Home Page can also redirect you.
 
-- And of course, the big button Get Started is here to help users swiftly dive into the exciting world of Tweets!
+- Clicking the Get Started button takes users to the Tweets Page to explore tweets and user profiles.
 
 Features:
 
 - As soon as you are on the Tweets Page you can look into cards with brief information about users' profiles.
+
+- Each card has users' name, number of their tweets and followers.
 
 - To subscribe to the user's profile all you need is to press the button Follow.
 
